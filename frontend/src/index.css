@@ -1,0 +1,72 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@theme {
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F7F5F0;
+  --color-bg-tertiary: #EBE6E0;
+  
+  --color-text-primary: #1A1D20;
+  --color-text-secondary: #4A5568;
+  
+  --color-accent: #9CAF88;
+  --color-accent-hover: #8A9D76;
+
+  --font-primary: "Outfit", sans-serif;
+  
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 6rem;
+  --spacing-2xl: 10rem;
+  
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  --animate-fade-up: fade-up 1s ease-out forwards;
+  --animate-image-reveal: image-reveal 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+
+  @keyframes fade-up {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes image-reveal {
+    0% {
+      opacity: 0;
+      transform: scale(1.05);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+/* Global resets and base styles */
+@layer base {
+  body {
+    font-family: var(--font-primary);
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    @apply leading-relaxed antialiased;
+  }
+}
+
+.container {
+  @apply w-full max-w-[1440px] mx-auto px-8;
+}
+
+@media (max-width: 768px) {
+  .container {
+    @apply px-6;
+  }
+}
